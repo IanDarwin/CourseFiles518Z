@@ -1,0 +1,4 @@
+= CourseFiles518Z
+
+These are the files for the home directory of students on a course I am teaching.
+Details later.
