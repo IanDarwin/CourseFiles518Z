@@ -1,0 +1,18 @@
+	body {
+	  background-image: url('images/background.jpg');
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size: 100% 100%;
+	}
+	/* Paragraph formats: use generic, non-vendor specific names (no Arial) */
+	a,p,li	{ color: white; font-family: Helvetica, sans-serif; }
+	h1	{ color: white; font-family: Helvetica, sans-serif; }
+	h2	{ color: white; font-family: Helvetica, sans-serif; }
+	h3	{ color: white; font-family: Helvetica, sans-serif; }
+	h4	{ color: white; font-family: Helvetica, sans-serif; }
+	h5	{ color: white; font-family: Helvetica, sans-serif; }
+	h6	{ color: white; font-family: Helvetica, sans-serif; }
+
+	a:hover {
+			background-color: #dbd4a6;
+	}
