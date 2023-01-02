@@ -41,7 +41,7 @@ echo Need to add these
 echo i18n_counter_way1
 
 cd makehandsons
-. ../apache-maven-3.8.6/bin/mvn -ntp -DskipTests clean package install assembly:single
+. ../apache-maven-${MAVEN_VER}/bin/mvn -ntp -DskipTests clean package install assembly:single
 copy target/makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME/lib/makehandsons.jar
 copy scripts/* $HOME/bin
 cd ..
@@ -53,7 +53,7 @@ cd ..
 
 # Chapter 3 Expenses-server - from course author, to upload expenses for Expenses app  
 echo Pre-fetch a bunch ("half the internet") of dependencies for Spring-boot server
-. apache-maven-3.8.6/bin/mvn -ntp -f expenses-server/pom.xml compile
+. apache-maven-${MAVEN_VER}/bin/mvn -ntp -f expenses-server/pom.xml compile
 
 # Grand finale: download any remaining files in non-git format
 curl https://darwinsys.com/tmp/Tilde518Z.tgz | tar xzf -
