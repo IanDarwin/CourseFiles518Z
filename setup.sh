@@ -29,13 +29,16 @@ PATH=$PATH:$HOME/apache-maven-${MAVEN_VER}/bin
 for git_repo in \
 	https://github.com/IanDarwin/{dartsrc,flutterdemos,jMemory} \
 	https://github.com/IanDarwin/{makehandsons,CourseFiles518Z,expenses-server \
-	https://github.com/IanDarwin/bookmarks-flutter \
+	https://github.com/IanDarwin/{bookmarks-flutter,jmemory} \
 	https://github.com/flutter/samples \
 	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab.git} \
 # This line intentionally left blank. Well, at least commented
 do
 	git clone $git_repo
 done
+
+echo Need to add these
+echo i18n_counter_way1
 
 cd makehandsons
 . ../apache-maven-3.8.6/bin/mvn -ntp -DskipTests clean package install assembly:single
