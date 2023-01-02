@@ -20,10 +20,6 @@ curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/release
 unzip flutter.zip > nul:
 rm   flutter.zip
 
-# echo Visual Studio needed by Flutter to build Windows apps
-# echo "Choose the C++ tooling if asked"
-# winget install "Visual Studio Community 2022"  --override "--add Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp"  -s msstore
-
 echo Downloading Apache Maven build tool from https://maven.apache.org/download
 curl https://dlcdn.apache.org/maven/maven-3/${MAVEN_VER}/binaries/apache-maven-${MAVEN_VER}-bin.tar.gz | tar xzf -
 PATH=$PATH:$HOME/apache-maven-${MAVEN_VER}/bin
@@ -33,6 +29,7 @@ PATH=$PATH:$HOME/apache-maven-${MAVEN_VER}/bin
 for git_repo in \
 	https://github.com/IanDarwin/{dartsrc,flutterdemos,jMemory} \
 	https://github.com/IanDarwin/{makehandsons,CourseFiles518Z,expenses-server \
+	https://github.com/IanDarwin/bookmarks-flutter \
 	https://github.com/flutter/samples \
 	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab.git} \
 # This line intentionally left blank. Well, at least commented
