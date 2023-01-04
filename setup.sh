@@ -2,23 +2,23 @@
 
 # Set up some version numbers
 MAVEN_VER=3.8.7
-FLUTTER_VER=3.3.9-stable
+FLUTTER_VER=3.3.10-stable
 
 echo Flutter Course - Installs 
-
-set -e # for now, bomb if anything fails
 
 # Make sure we start in ~
 cd
 # Create these early to avoid accidents
 mkdir bin lib
 
+set -e # for now, bomb if anything fails
+
 # To install: IntelliJ IDea, Android Studio, Dart, Flutter
 
 # Flutter SDK - latest - from https://flutter.dev/
-curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_.${FLUTTER_VER}.zip
-unzip flutter.zip > /dev/null
-rm   flutter.zip
+curl -o flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VER}.tar.xz
+tar xf flutter.tar.xz > /dev/null
+rm   flutter.tar.xz
 
 echo Downloading Apache Maven build tool from https://maven.apache.org/download
 curl https://dlcdn.apache.org/maven/maven-3/${MAVEN_VER}/binaries/apache-maven-${MAVEN_VER}-bin.tar.gz | tar xzf -
