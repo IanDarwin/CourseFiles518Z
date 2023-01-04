@@ -48,3 +48,5 @@ My work
   160  ls scripts
 sudo apt install curl
 sudo apt install make
+sudo apt install zeal
+Zeal: added Dart (from docsets) and Flutter (from https://api.flutter.dev/offline/flutter.xml)
