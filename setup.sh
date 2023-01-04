@@ -17,7 +17,7 @@ mkdir bin lib
 
 # Flutter SDK - latest - from https://flutter.dev/
 curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_.${FLUTTER_VER}.zip
-unzip flutter.zip > nul:
+unzip flutter.zip > /dev/null
 rm   flutter.zip
 
 echo Downloading Apache Maven build tool from https://maven.apache.org/download

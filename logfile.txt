@@ -1,0 +1,50 @@
+Done before I got the machine:
+
+    5  cd Desktop/vmware-tools-distrib
+    7  sudo apt-get install open-vm-tools-desktop
+    8  hostname
+   19  sudo apt install net-tools
+   25  sudo # echo -e "LANG=en_US.utf-8\nLC_ALL=en_US.utf-8\n" > /etc/environment
+   27  sudo apt-get install git
+   30  cd   /
+   31  sudo git clone https://git.openstack.org/openstack-dev/devstack master
+   34  DEBIAN_FRONTEND=noninteractive sudo apt-get install -qqy git || sudo yum install -qy git
+   41  sudo useradd -s /bin/bash -d /opt/stack -m stack
+   42  echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
+   45  sudo useradd -s /bin/bash -d /opt/stack -m student
+   46  echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/student
+   52  sudo apt -y install git
+   53  git clone https://git.openstack.org/openstack-dev/devstack
+   54  cd devstack
+   55  nano local.conf
+   57  sudo gsettings set com.canonical.indicator.keyboard visible false
+   58  sudo apt full-upgrade
+   59  update-manager -c
+   60  gconf-editor -> apps/nautilus/desktop -> trash_icon_name
+   61  $ sudo apt list --upgradable
+   62  sudo apt list --upgradable
+   63  sudo apt update && sudo apt upgrade -y
+   64  sudo reboot
+   65  lsb_release -a
+   66  sudo apt install update-core-manager
+   76  hostnamectl set-hostname ltree1
+   79  echo "blacklist floppy" | sudo tee /etc/modprobe.d/blacklist-floppy.conf
+
+My work
+
+   91  ls -l /
+   95  scp -r ian@git.darwinsys.com:/git/CourseFiles518Z /tmp
+  109  git clone /tmp/CourseFiles518Z/
+  110  cd CourseFiles518Z/
+  121  which ksh
+  130  mv git/CourseFiles518Z/ .
+  131  cd CourseFiles518Z/
+  ...  vi setup.sh
+  145  git config --global user.email ian@darwinsys.com
+  146  git config --global user.name  Ian\ Darwin
+  149  git commit -m "Use MAVEN_VER"  setup.sh
+  150  git push
+  159  git clone https://github.com/IanDarwin/scripts
+  160  ls scripts
+sudo apt install curl
+sudo apt install make
