@@ -3,6 +3,7 @@
 # Set up some version numbers
 MAVEN_VER=3.8.7
 FLUTTER_VER=3.3.10-stable
+AS_VER=2021.3.1.17
 
 echo Flutter Course - Installs 
 
@@ -13,7 +14,10 @@ mkdir bin lib
 
 set -e # for now, bomb if anything fails
 
-# To install: IntelliJ IDea, Android Studio, Dart, Flutter
+echo STILL TO install: IntelliJ IDea
+
+echo Installing Android Studio
+curl https://redirector.gvt1.com/edgedl/android/studio/ide-zips/${AS_VER}/android-studio-${AS_VER}-linux.tar.gz | tar xzf -
 
 # Flutter SDK - latest - from https://flutter.dev/
 curl -o flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VER}.tar.xz
@@ -28,7 +32,7 @@ PATH=$PATH:$HOME/apache-maven-${MAVEN_VER}/bin
 # DartSrc - course author's open-source Dart demo package 
 for git_repo in \
 	https://github.com/IanDarwin/{dartsrc,flutterdemos,jMemory} \
-	https://github.com/IanDarwin/{makehandsons,CourseFiles518Z,expenses-server \
+	https://github.com/IanDarwin/{makehandsons,CourseFiles518Z,expenses-server} \
 	https://github.com/IanDarwin/{bookmarks-flutter,darttest,i18n_counter_way1,jmemory} \
 	https://github.com/flutter/samples \
 	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab.git,ThePlantApp_v2.3} \
