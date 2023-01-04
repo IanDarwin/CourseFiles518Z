@@ -50,3 +50,9 @@ sudo apt install curl
 sudo apt install make
 sudo apt install zeal
 Zeal: added Dart (from docsets) and Flutter (from https://api.flutter.dev/offline/flutter.xml)
+Ran all the parts of setup.sh
+Opened Android Studio, 
+  It downloaded boodles of stuff.
+  Did Tools->Create Launcher->As root. 
+  Launched from the App menu, dragged to Favorites.
+Configure Dart plugin: secret is that Dart is at $FLUTTER/kbin/cache/dart-sdk
