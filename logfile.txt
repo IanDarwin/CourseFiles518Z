@@ -46,10 +46,7 @@ My work
   150  git push
   159  git clone https://github.com/IanDarwin/scripts
   160  ls scripts
-sudo apt install curl
-sudo apt install make
-sudo apt install zeal
-Zeal: added Dart (from docsets) and Flutter (from https://api.flutter.dev/offline/flutter.xml)
+Zeal: added Dart (from docsets) and Flutter (by Add Feed - https://api.flutter.dev/offline/flutter.xml)
 Ran all the parts of setup.sh
 Opened Android Studio, 
   It downloaded boodles of stuff.
