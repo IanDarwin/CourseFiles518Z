@@ -17,6 +17,11 @@ set -e # for now, bomb if anything fails
 # Some things we can actually install directly
 sudo apt install curl doas make maven zeal
 
+sudo cat > /etc/doas.conf <<!
+permit nopass setenv { ENV PS1 HOME SSH_AUTH_SOCK PATH } :sudo
+permit nopass keepenv root as root
+!
+
 if [ ! -d intellij-idea ]; then
 echo Installing IntelliJ
 curl -L https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VER}.tar.gz | tar xzf -
