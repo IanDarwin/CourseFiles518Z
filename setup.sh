@@ -15,7 +15,7 @@ mkdir bin lib
 set -e # for now, bomb if anything fails
 
 # Some things we can actually install directly
-sudo apt install maven
+sudo apt install curl make maven zeal
 
 if [ ! -d intellij-idea ]; then
 echo Installing IntelliJ
