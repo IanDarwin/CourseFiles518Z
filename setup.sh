@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Set up some version numbers
-FLUTTER_VER=3.3.10-stable
+INTELLIJ_VER=2022.3.1
 AS_VER=2021.3.1.17
+FLUTTER_VER=3.3.10-stable
 
 echo Flutter Course - Installs 
 
@@ -16,7 +17,12 @@ set -e # for now, bomb if anything fails
 # Some things we can actually install directly
 sudo apt install maven
 
-echo STILL TO install: IntelliJ IDea
+if [ ! -d intellij-idea ]; then
+echo Installing IntelliJ
+curl -L https://download.jetbrains.com/idea/ideaIC-${INTELLIJ_VER}.tar.gz | tar xzf -
+mv idea-IC* intellij-idea
+else echo IntelliJ already installed
+fi
 
 if [ ! -d android-studio ]; then
 echo Installing Android Studio
@@ -30,13 +36,6 @@ curl -o flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/rele
 tar xf flutter.tar.xz > /dev/null
 rm   flutter.tar.xz
 else echo Flutter already installed
-fi
-
-if [ ! -d apache-maven-${MAVEN_VER} ]; then
-echo Downloading Apache Maven build tool from https://maven.apache.org/download
-curl https://dlcdn.apache.org/maven/maven-3/${MAVEN_VER}/binaries/apache-maven-${MAVEN_VER}-bin.tar.gz | tar xzf -
-PATH=$PATH:$HOME/apache-maven-${MAVEN_VER}/bin
-else echo apache-maven-${MAVEN_VER} already installed
 fi
 
 # Sample Code:
@@ -85,3 +84,6 @@ echo Tha-Tha-Tha-That's all folks!
 echo Remember there are many manual step needed:
 echo Set All Browser Home Pages to ~/CourseFiles518Z/website/index.html
 echo Start Android Studio, get Flutter plugin, configure Android API 33
+echo Start IntellIJ
+echo Set both to start 'Open' dialog in ~
+echo 'Add shortcuts eg ^P^M'
