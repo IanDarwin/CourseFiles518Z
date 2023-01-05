@@ -15,7 +15,7 @@ mkdir bin lib
 set -e # for now, bomb if anything fails
 
 # Some things we can actually install directly
-sudo apt install curl make maven zeal
+sudo apt install curl doas make maven zeal
 
 if [ ! -d intellij-idea ]; then
 echo Installing IntelliJ
@@ -41,9 +41,18 @@ fi
 # Sample Code:
 # DartSrc - course author's open-source Dart demo package 
 for git_repo in \
-	https://github.com/IanDarwin/{dartsrc,flutterdemos,jMemory} \
-	https://github.com/IanDarwin/{makehandsons,expenses-server} \
-	https://github.com/IanDarwin/{bookmarks-flutter,darttest,l10n_counter_way1,jmemory} \
+	https://github.com/IanDarwin/{\
+bookmarks-flutter,\
+dartsrc,\
+darttest,\
+dartmocktest,\
+expenses-serve,\
+flutterdemos,\
+jmemory,\
+jMemory,\
+l10n_counter_way1,\
+makehandsons\
+} \
 	https://github.com/flutter/samples \
 	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab.git,RajithAshok/ThePlantApp_v2.3} \
 # This line intentionally left blank. Well, at least commented
