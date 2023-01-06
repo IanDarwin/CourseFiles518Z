@@ -20,7 +20,7 @@ sudo apt remove openjdk-11-jre-headless || echo JDK11 Not Removed
 sudo apt install openjdk-17-jdk
 
 # Some things we can actually install directly
-sudo apt install curl doas make maven ripgrep zeal
+sudo apt install clang cmake curl doas make maven ripgrep zeal
 
 sudo dd of=/etc/doas.conf <<!
 permit nopass setenv { ENV PS1 HOME SSH_AUTH_SOCK PATH } :sudo
