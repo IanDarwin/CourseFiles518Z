@@ -14,8 +14,13 @@ mkdir bin lib
 
 set -e # for now, bomb if anything fails
 
+# Clean up Java (prior to Maven)
+apt list --installed | rg jdk\|java || echo JDK Not Found
+sudo apt remove openjdk-11-jre-headless || echo JDK11 Not Removed
+sudo apt install openjdk-17-jdk
+
 # Some things we can actually install directly
-sudo apt install curl doas make maven zeal
+sudo apt install curl doas make maven ripgrep zeal
 
 sudo dd of=/etc/doas.conf <<!
 permit nopass setenv { ENV PS1 HOME SSH_AUTH_SOCK PATH } :sudo
@@ -58,7 +63,7 @@ l10n_counter_way1,\
 makehandsons\
 } \
 	https://github.com/flutter/samples \
-	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab.git,RajithAshok/ThePlantApp_v2.3} \
+	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab,RajithAshok/ThePlantApp_v2.3} \
 # This line intentionally left blank. Well, at least commented
 do
 	targdir=${git_repo##*/}
@@ -86,7 +91,7 @@ echo Setting up Expenses-server - from course author, to upload expenses for Exp
 (
 cd expenses-server
 echo Pre-fetch '"half the internet"' dependencies for Spring-boot server
-mvn -ntp -f expenses-server/pom.xml compile 
+mvn -ntp compile 
 )
 
 # Grand finale: download any remaining files in non-git format
@@ -98,5 +103,5 @@ echo Remember there are many manual step needed:
 echo Set All Browser Home Pages to ~/CourseFiles518Z/website/index.html
 echo Start Android Studio, get Flutter plugin, configure Android API 33
 echo Start IntellIJ
-echo Set both to start 'Open' dialog in ~
-echo 'Add shortcuts eg ^P^M'
+echo Set both to start 'Open' dialog in ~'
+echo 'Add shortcuts to both eg ^P^M'
