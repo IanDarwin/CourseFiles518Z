@@ -17,7 +17,7 @@ set -e # for now, bomb if anything fails
 # Some things we can actually install directly
 sudo apt install curl doas make maven zeal
 
-sudo cat > /etc/doas.conf <<!
+sudo dd of=/etc/doas.conf <<!
 permit nopass setenv { ENV PS1 HOME SSH_AUTH_SOCK PATH } :sudo
 permit nopass keepenv root as root
 !
@@ -50,11 +50,10 @@ for git_repo in \
 bookmarks-flutter,\
 dartsrc,\
 darttest,\
-dartmocktest,\
-expenses-serve,\
+darttestmocks,\
+expenses-server,\
 flutterdemos,\
 jmemory,\
-jMemory,\
 l10n_counter_way1,\
 makehandsons\
 } \
