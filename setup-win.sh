@@ -13,24 +13,24 @@ mkdir bin lib
 set -e # from here, bomb if error
 
 echo Windows Terminal - tabbed terminal with CTRL/C-CTRL-V
-winget install --id Microsoft.WindowsTerminal
+# winget install --id Microsoft.WindowsTerminal
 echo Java JDK 17 LTS - free from numerous OpenJDK download sites
-winget install --id EclipseAdoptium.Temurin.17.JDK --version 17.0.4.8
-PATH="C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot\bin";%PATH%
+echo done  winget install --id EclipseAdoptium.Temurin.17.JDK --version 17.0.4.8
+PATH="/c/Program Files/Eclipse Adoptium/jdk-17.0.4.8-hotspot/bin:$PATH"
 java -version
-
-exit 
 
 echo IntelliJ java-only install
 winget install --id JetBrains.IntelliJIDEA.Community
-echo Android Studio IDE (Ch03 to end) - free from Google (it's just JetBrains IntelliJ with extra plugins)
+echo "Android Studio IDE (Ch03 to end) - free from Google (it's just JetBrains IntelliJ with extra plugins)"
 winget install --id Google.AndroidStudio
 echo Android SDK, tools, emulators - downloaded when starting up Studio first time
 
 echo Flutter SDK - latest - from https://flutter.dev/
 curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.0.5-stable.zip
 "C:\Program Files\Git\usr\bin\unzip.exe" flutter.zip > nul:
-del   flutter.zip
+rm   flutter.zip
+
+exit 
 
 echo Tools used in preparing the course load
 echo Make (gnu-make) - 
