@@ -12,6 +12,8 @@ mkdir bin lib
 
 set -e # from here, bomb if error
 
+if [ false ]; then
+
 echo Windows Terminal - tabbed terminal with CTRL/C-CTRL-V
 # winget install --id Microsoft.WindowsTerminal
 echo Java JDK 17 LTS - free from numerous OpenJDK download sites
@@ -30,13 +32,11 @@ curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/release
 "C:\Program Files\Git\usr\bin\unzip.exe" flutter.zip > nul:
 rm   flutter.zip
 
-exit 
+fi # ================== END ================
 
 echo Tools used in preparing the course load
 echo Make (gnu-make) - 
 winget install --id GnuWin32.Make
-echo mitmproxy for Chap 7
-winget install --id mitmproxy.mitmproxy
 echo nmap just for ncat
 winget install --id Insecure.Nmap
 
@@ -44,8 +44,6 @@ echo Downloading maven build tool from https://maven.apache.org/download
 curl https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz | tar xzf -
 
 echo Documentation
-echo Android Internals book first edition, free download, Used with permission.
-echo SEE http://newandroidbook.com/vault7.htm. 
 curl -o Documents/LevinInternalsBookVol1FirstEdn.pdf http://newandroidbook.com/AIvI-M-RL1.pdf
 
 echo Sample Code:
