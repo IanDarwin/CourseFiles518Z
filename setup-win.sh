@@ -89,9 +89,9 @@ fi
 
 (
 cd makehandsons
-sh ../apache-maven-${MAVEN_VER}/bin/mvn.cmd -ntp -DskipTests clean package install assembly:single
-copy target/makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME/lib/makehandsons.jar
-copy scripts/* $HOME/bin
+sh ../apache-maven-${MAVEN_VER}/bin/mvn -ntp -DskipTests clean package install assembly:single
+cp target/makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME/lib/makehandsons.jar
+cp scripts/* $HOME/bin
 )
 
 echo Generating exercise files from solutions
