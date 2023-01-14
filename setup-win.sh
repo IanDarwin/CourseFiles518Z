@@ -32,6 +32,32 @@ curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/release
 "C:\Program Files\Git\usr\bin\unzip.exe" flutter.zip > nul:
 rm   flutter.zip
 
+# Sample Code:
+# DartSrc - course author's open-source Dart demo package 
+for git_repo in \
+	https://github.com/IanDarwin/{\
+bookmarks-flutter,\
+dartsrc,\
+darttest,\
+darttestmocks,\
+expenses-server,\
+fluttersrc,\
+flowcase,\
+jmemory,\
+l10n_counter_way1,\
+makehandsons\
+} \
+	https://github.com/flutter/samples \
+	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab,RajithAshok/ThePlantApp_v2.3} \
+# This line intentionally left blank. Well, at least commented
+do
+	targdir=${git_repo##*/}
+	if [ ! -d ${targdir} ]; then
+		git clone $git_repo
+	else echo $targdir already exists, skipping $git_repo
+	fi
+done
+
 fi # ================== END ================
 
 echo Tools used in preparing the course load
@@ -46,16 +72,6 @@ curl https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bi
 echo Documentation
 curl -o Documents/LevinInternalsBookVol1FirstEdn.pdf http://newandroidbook.com/AIvI-M-RL1.pdf
 
-echo Sample Code:
-echo JavaSrc - course author's open-source Java demo package 
-git clone https://github.com/IanDarwin/javasrc
-echo AndroidCookbookExamples - course author's open-source Android demos 
-git clone https://github.com/IanDarwin/Android-Cookbook-Examples
-echo AndroidTemplate
-git clone https://github.com/IanDarwin/AndroidTemplate
-
-echo Course Problems and Solutions, and a few demos 
-git clone https://github.com/IanDarwin/makehandsons
 cd makehandsons
 CALL ..\apache-maven-3.8.6\bin\mvn.cmd -ntp -DskipTests clean package install assembly:single
 copy target\makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME\lib\makehandsons.jar
