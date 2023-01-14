@@ -5,6 +5,7 @@ INTELLIJ_VER=2022.3.1
 AS_VER=2021.3.1.17
 FLUTTER_VER=3.3.10-stable
 MAVEN_VER=3.8.7
+COURSE_NUM=518Z
 
 echo Androd Module: Installs Part One 
 echo You must have installed git:
@@ -78,34 +79,44 @@ winget install --id GnuWin32.Make
 echo nmap just for ncat
 winget install --id Insecure.Nmap
 
-fi # ================== END OF SKIP ================
-
 echo Downloading maven build tool from https://maven.apache.org/download
 curl https://dlcdn.apache.org/maven/maven-3/${MAVEN_VER}/binaries/apache-maven-${MAVEN_VER}-bin.tar.gz | tar xzf -
 
 echo Documentation
 curl -o Documents/LevinInternalsBookVol1FirstEdn.pdf http://newandroidbook.com/AIvI-M-RL1.pdf
 
+fi
+
+(
 cd makehandsons
-CALL ..\apache-maven-3.8.6\bin\mvn.cmd -ntp -DskipTests clean package install assembly:single
-copy target\makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME\lib\makehandsons.jar
-copy scripts\* $HOME\bin
-cd ..
+sh ../apache-maven-${MAVEN_VER}/bin/mvn.cmd -ntp -DskipTests clean package install assembly:single
+copy target/makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME/lib/makehandsons.jar
+copy scripts/* $HOME/bin
+)
 
 echo Generating exercise files from solutions
-cd CourseFiles518Z\sourcecode
+(
+cd CourseFiles${COURSE_NUM}/sourcecode
 make
-cd ..\..
-
-echo Chapter 3 Expenses-server - from course author, to upload expenses for Expenses app  
-echo 'Pre-fetch a bunch ("half the internet") of dependencies for Spring-boot server'
-CALL apache-maven-3.8.6\bin\mvn.cmd -ntp -f expenses-server/pom.xml compile
+)
 
 # echo Grand finale: download a tranche of files in non-git format
 # curl https://darwinsys.com/tmp/Tilde518Z.tgz | tar xzf -
 
-@echo Tha-Tha-Tha-That's all folks!
+git clone https://github.com/IanDarwin/expenses-server
+echo Pre-fetch a bunch ("half the internet") of dependencies for Spring-boot server
+sh apache-maven-3.8.6\bin\mvn -ntp -f expenses-server/pom.xml compile
 
-@echo echoember there is one manual step needed:
-@echo Set All Browser Home Pages to 
-@echo	file:///C:/Users/%USERNAME%/CourseFiles518Z/website/index.html
+echo Grand finale: download a tranche of files in non-git format
+curl https://darwinsys.com/tmp/Tilde${COURSENUM}.tgz | tar xzf -
+
+echo Java Version - default should be 17, not 11
+java --version
+
+echo Tha-Tha-Tha-That's all folks!
+
+echo Remember there is one manual step needed:
+echo Set All Browser Home Pages to 
+echo	file:///C:/Users/%USERNAME%/CourseFiles${COURSENUM}/website/index.html
+
+
