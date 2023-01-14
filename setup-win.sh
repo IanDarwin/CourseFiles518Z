@@ -13,12 +13,6 @@ echo winget install -i Git.Git
 echo And chosen the "'Unix utilities path'"!
 echo
 
-# Set up some version numbers
-INTELLIJ_VER=2022.3.1
-AS_VER=2021.3.1.17
-FLUTTER_VER=3.3.10-stable
-MAVEN_VER=3.8.7
-
 # Make sure we start in ~
 cd $HOME
 # Create these early to avoid accidents
