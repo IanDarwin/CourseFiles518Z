@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Set up some version numbers
+INTELLIJ_VER=2022.3.1
+AS_VER=2021.3.1.17
+FLUTTER_VER=3.3.10-stable
+MAVEN_VER=3.8.7
+
 echo Androd Module: Installs Part One 
 echo You must have installed git:
 echo winget install -i Git.Git 
@@ -67,7 +73,7 @@ echo nmap just for ncat
 winget install --id Insecure.Nmap
 
 echo Downloading maven build tool from https://maven.apache.org/download
-curl https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz | tar xzf -
+curl https://dlcdn.apache.org/maven/maven-3/${MAVEN_VER}/binaries/apache-maven-${MAVEN_VER}-bin.tar.gz | tar xzf -
 
 echo Documentation
 curl -o Documents/LevinInternalsBookVol1FirstEdn.pdf http://newandroidbook.com/AIvI-M-RL1.pdf
