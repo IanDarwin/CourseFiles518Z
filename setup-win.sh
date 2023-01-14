@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Set up some version numbers
+INTELLIJ_VER=2022.3.1
+AS_VER=2021.3.1.17
+FLUTTER_VER=3.3.10-stable
+MAVEN_VER=3.8.7
+
 echo Androd Module: Installs Part One 
 echo You must have installed git:
 echo winget install -i Git.Git 
