@@ -20,8 +20,6 @@ mkdir bin lib
 
 set -e # from here, bomb if error
 
-if false; then
-
 echo Windows Terminal - tabbed terminal with CTRL/C-CTRL-V
 # winget install --id Microsoft.WindowsTerminal
 echo "Had to manually install via store??"
@@ -79,7 +77,9 @@ curl https://dlcdn.apache.org/maven/maven-3/${MAVEN_VER}/binaries/apache-maven-$
 echo Documentation
 curl -o Documents/LevinInternalsBookVol1FirstEdn.pdf http://newandroidbook.com/AIvI-M-RL1.pdf
 
-fi
+echo "Visual Studio C++ for making windows desktop apps"
+echo "BE SURE TO CHOOSE THE 'Desktop development with C++' package"
+winget install -i Microsoft.VisualStudio.2022.Community
 
 (
 cd makehandsons
@@ -94,15 +94,12 @@ cd CourseFiles${COURSE_NUM}/sourcecode
 make
 )
 
-# echo Grand finale: download a tranche of files in non-git format
-# curl https://darwinsys.com/tmp/Tilde518Z.tgz | tar xzf -
-
 git clone https://github.com/IanDarwin/expenses-server
 echo Pre-fetch a bunch ("half the internet") of dependencies for Spring-boot server
 sh apache-maven-3.8.6\bin\mvn -ntp -f expenses-server/pom.xml compile
 
-echo Grand finale: download a tranche of files in non-git format
-curl https://darwinsys.com/tmp/Tilde${COURSENUM}.tgz | tar xzf -
+# echo Grand finale: download a tranche of files in non-git format
+# curl https://darwinsys.com/tmp/Tilde${COURSENUM}.tgz | tar xzf -
 
 echo Java Version - default should be 17, not 11
 java --version
