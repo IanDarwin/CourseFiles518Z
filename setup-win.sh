@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Set up some version numbers
+COURSE_NUM=518Z
 INTELLIJ_VER=2022.3.1
 AS_VER=2021.3.1.17
+JAVA_VER=17.0.4.8
 FLUTTER_VER=3.3.10-stable
 MAVEN_VER=3.8.7
-COURSE_NUM=518Z
 
 echo Androd Module: Installs Part One 
 echo You must have installed git:
@@ -25,8 +26,8 @@ echo Windows Terminal - tabbed terminal with CTRL/C-CTRL-V
 echo "Had to manually install via store??"
 
 echo Java JDK 17 LTS - free from numerous OpenJDK download sites
-echo done  winget install --id EclipseAdoptium.Temurin.17.JDK --version 17.0.4.8
-PATH="/c/Program Files/Eclipse Adoptium/jdk-17.0.4.8-hotspot/bin:$PATH"
+winget install --id EclipseAdoptium.Temurin.17.JDK --version ${JAVA_VER}
+PATH="/c/Program Files/Eclipse Adoptium/jdk-${JAVA_VER}-hotspot/bin:$PATH"
 java -version
 
 echo IntelliJ java-only install
