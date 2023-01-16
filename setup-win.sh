@@ -78,7 +78,7 @@ echo Documentation
 curl -o Documents/LevinInternalsBookVol1FirstEdn.pdf http://newandroidbook.com/AIvI-M-RL1.pdf
 
 echo "Visual Studio C++ for making windows desktop apps"
-echo "BE SURE TO CHOOSE THE 'Desktop development with C++' package"
+echo "BE SURE TO CHOOSE THE 'Desktop development with C++' Workload"
 winget install -i Microsoft.VisualStudio.2022.Community
 
 (
