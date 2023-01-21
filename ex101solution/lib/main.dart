@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:intl_translation/extract_messages.dart';
+import 'package:intl_translation/generate_localized.dart';
+import 'package:intl_translation/visitors/interpolation_visitor.dart';
+import 'package:intl_translation/visitors/message_finding_visitor.dart';
+import 'package:intl_translation/visitors/plural_gender_visitor.dart';
 
 void main() {
   runApp(const MyApp());
