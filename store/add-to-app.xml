@@ -1,0 +1,12 @@
+<!-- 
+***  This fragment must go into the AndroidManifest file,
+*** either before or after the existing main Activity entry.
+*** Keep the configChanges entry as one long line.
+-->
+<activity
+  android:name="io.flutter.embedding.android.FlutterActivity"
+  android:theme="@style/LaunchTheme"
+  android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+  android:hardwareAccelerated="true"
+  android:windowSoftInputMode="adjustResize"
+  />
