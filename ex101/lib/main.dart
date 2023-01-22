@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
 
 /// A variant of the TableDemo from FlowCase
 class TableDemo extends StatefulWidget {
-
-  const TableDemo({super.key});
+  final String title;
+  const TableDemo({required this.title, super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -33,7 +33,8 @@ class TableDemo extends StatefulWidget {
 class _TableDemoState extends State<TableDemo> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Scaffold(
+        body: ListView(
         children: [
           const Text("Basic Table"),
           Container(
@@ -145,7 +146,8 @@ class _TableDemoState extends State<TableDemo> {
                 ],
               )
           )
-        ]
+        ],
+        )
     );
   }
 }
