@@ -14,12 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String title = 'Fluttter Internationalization Demo';
     return MaterialApp(
-      title: 'Flutter Internationalization Demo',
+      title: title,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const TableDemo(title: 'Flutter Internationalization'),
+      home: const TableDemo(title: title),
     );
   }
 }
@@ -40,7 +43,7 @@ class _TableDemoState extends State<TableDemo> {
   Widget build(BuildContext context) {
     return ListView(
         children: [
-          const Text("Basic Table"),
+          const Text('Basic Table'),
           Container(
             height: 200,
             padding: const EdgeInsets.all(7),
