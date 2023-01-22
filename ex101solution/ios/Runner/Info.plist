@@ -47,5 +47,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleLocalizations</key>
+    <array>
+        <string>en_US</string>
+        <string>ar</string>
+        <string>es</string>
+        <string>uk</string>
+    </array>
 </dict>
 </plist>
