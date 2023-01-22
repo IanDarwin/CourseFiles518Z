@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:intl_translation/extract_messages.dart';
-import 'package:intl_translation/generate_localized.dart';
-import 'package:intl_translation/visitors/interpolation_visitor.dart';
-import 'package:intl_translation/visitors/message_finding_visitor.dart';
-import 'package:intl_translation/visitors/plural_gender_visitor.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,20 +14,26 @@ class MyApp extends StatelessWidget {
     String title = 'Fluttter Internationalization Demo';
     return MaterialApp(
       title: title,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const TableDemo(title: title),
+      home: TableDemo(title: title),
     );
   }
 }
 
 /// A variant of the TableDemo from FlowCase
 class TableDemo extends StatefulWidget {
+  final String title;
 
-  const TableDemo({super.key});
+  const TableDemo({required this.title, super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -41,7 +44,8 @@ class TableDemo extends StatefulWidget {
 class _TableDemoState extends State<TableDemo> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Scaffold(
+        body: ListView(
         children: [
           const Text('Basic Table'),
           Container(
@@ -91,7 +95,7 @@ class _TableDemoState extends State<TableDemo> {
           ),
 
           // SECOND TABLE
-          const Text("Table with a bit of style"),
+          Text(S.of(context).table_title),
           Container(
             padding: const EdgeInsets.all(7),
             child: Table(
@@ -102,16 +106,16 @@ class _TableDemoState extends State<TableDemo> {
                   2: FixedColumnWidth(80),
                 },
                 defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: const <TableRow>[
+                children: <TableRow>[
                   TableRow(
                       children: <Widget>[
-                        Text("Date", style: TextStyle(fontWeight: FontWeight.bold)),
-                        Text("Item", style: TextStyle(fontWeight: FontWeight.bold)),
-                        Text("Amount", style: TextStyle(fontWeight: FontWeight.bold)),
-                        Text("Balance", style: TextStyle(fontWeight: FontWeight.bold)),
+                        Text(S.of(context).date, style: const TextStyle(fontWeight: FontWeight.bold)),
+                        Text(S.of(context).item, style: const TextStyle(fontWeight: FontWeight.bold)),
+                        Text(S.of(context).amount, style: const TextStyle(fontWeight: FontWeight.bold)),
+                        Text(S.of(context).balance, style: const TextStyle(fontWeight: FontWeight.bold)),
                       ]
                   ),
-                  TableRow(
+                  const TableRow(
                       children: <Widget>[
                         Text("2023-02-15"),
                         Text("Deposit ATM#42"),
@@ -119,7 +123,7 @@ class _TableDemoState extends State<TableDemo> {
                         Text("456.00", textAlign: TextAlign.end),
                       ]
                   ),
-                  TableRow(
+                  const TableRow(
                       children: <Widget>[
                         Text("2023-02-20"),
                         Text("Withdrawal ATM#42"),
@@ -132,16 +136,16 @@ class _TableDemoState extends State<TableDemo> {
           ),
 
           // THIRD TABLE
-          const Text("DataTable"),
+          Text(S.of(context).data_table),
           Container(
               padding: const EdgeInsets.all(7),
               child: DataTable(
                 border: TableBorder.all(),
-                columns: const [
-                  DataColumn(label:(Text('Date'))),
-                  DataColumn(label:(Text('Item'))),
-                  DataColumn(label:(Text('Amount'))),
-                  DataColumn(label:(Text('Balance'))),
+                columns: [
+                  DataColumn(label:(Text(S.of(context).date))),
+                  DataColumn(label:(Text(S.of(context).item))),
+                  DataColumn(label:(Text(S.of(context).amount))),
+                  DataColumn(label:(Text(S.of(context).balance))),
                 ],
                 rows: const [
                   DataRow(cells: [DataCell(Text('2022-02-15')),
@@ -153,7 +157,8 @@ class _TableDemoState extends State<TableDemo> {
                 ],
               )
           )
-        ]
+        ],
+                )
     );
   }
 }
