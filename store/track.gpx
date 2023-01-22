@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<gpx version="1.1"
+    creator="GpsTrack java client"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns='http://www.topografix.com/GPX/1/1'
+    xsi:schemaLocation='http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd'>
+  <metadata>
+    <name>jpstrack GPS Receiver track log</name>
+    <time>2023-01-21T15:34:59.00-0500</time>
+  </metadata>
+
+<!-- track start -->
+<trk>
+<src>Logged using jpstrack</src>
+<link href="http://darwinsys.com/jpstrack"><text>RejmiNet Group Inc.</text></link>
+<trkseg>
+<trkpt lat='43.684662' lon='-79.445741'>
+    <ele>111.277849</ele>
+    <time>2023-01-21T15:35:02.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.684690' lon='-79.445739'>
+    <ele>107.278449</ele>
+    <time>2023-01-21T15:35:12.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.684698' lon='-79.445744'>
+    <ele>108.867635</ele>
+    <time>2023-01-21T15:35:22.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.684832' lon='-79.445806'>
+    <ele>109.723201</ele>
+    <time>2023-01-21T15:35:27.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.685122' lon='-79.445926'>
+    <ele>111.585874</ele>
+    <time>2023-01-21T15:35:32.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.685254' lon='-79.445979'>
+    <ele>112.085090</ele>
+    <time>2023-01-21T15:35:37.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.685518' lon='-79.446090'>
+    <ele>118.790123</ele>
+    <time>2023-01-21T15:36:32.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.685934' lon='-79.446263'>
+    <ele>119.814234</ele>
+    <time>2023-01-21T15:36:37.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.686422' lon='-79.446463'>
+    <ele>121.073626</ele>
+    <time>2023-01-21T15:36:42.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+<trkpt lat='43.686970' lon='-79.446672'>
+    <ele>119.187021</ele>
+    <time>2023-01-21T15:36:47.00-0500</time>
+    <fix>3d</fix>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>
