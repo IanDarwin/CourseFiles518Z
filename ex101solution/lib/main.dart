@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String title = 'Fluttter Internationalization Demo';
+    String title = 'Flutter Internationalization Demo';
     return MaterialApp(
       title: title,
       localizationsDelegates: const [
@@ -44,6 +46,7 @@ class TableDemo extends StatefulWidget {
 class _TableDemoState extends State<TableDemo> {
   @override
   Widget build(BuildContext context) {
+    debugPrint("In TableDemo::State::build, locale is ${Localizations.localeOf(context)}");
     return Scaffold(
         appBar: AppBar(title: Text(widget.title)),
         body: ListView(
