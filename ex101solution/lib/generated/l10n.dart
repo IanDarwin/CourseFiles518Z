@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Basic Table`
+  String get basicTable {
+    return Intl.message(
+      'Basic Table',
+      name: 'basicTable',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Table with a bit of style`
   String get table_title {
     return Intl.message(

@@ -45,6 +45,7 @@ class _TableDemoState extends State<TableDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(widget.title)),
         body: ListView(
         children: [
           const Text('Basic Table'),

@@ -21,5 +21,15 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ua';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "amount": MessageLookupByLibrary.simpleMessage("сума"),
+        "balance": MessageLookupByLibrary.simpleMessage("баланс"),
+        "basicTable":
+            MessageLookupByLibrary.simpleMessage("проста таблиця даних"),
+        "data_table": MessageLookupByLibrary.simpleMessage("таблиця даних"),
+        "date": MessageLookupByLibrary.simpleMessage("Дата"),
+        "item": MessageLookupByLibrary.simpleMessage("пункт"),
+        "table_title":
+            MessageLookupByLibrary.simpleMessage("таблиця даних у стилі")
+      };
 }
