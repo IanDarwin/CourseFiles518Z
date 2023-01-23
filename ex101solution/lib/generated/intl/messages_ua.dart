@@ -26,10 +26,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "balance": MessageLookupByLibrary.simpleMessage("баланс"),
         "basicTable":
             MessageLookupByLibrary.simpleMessage("проста таблиця даних"),
-        "data_table": MessageLookupByLibrary.simpleMessage("таблиця даних"),
+        "dataTable": MessageLookupByLibrary.simpleMessage("таблиця даних"),
         "date": MessageLookupByLibrary.simpleMessage("Дата"),
         "item": MessageLookupByLibrary.simpleMessage("пункт"),
-        "table_title":
+        "tableTitle":
             MessageLookupByLibrary.simpleMessage("таблиця даних у стилі")
       };
 }

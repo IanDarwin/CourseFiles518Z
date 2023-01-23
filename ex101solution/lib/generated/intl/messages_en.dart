@@ -25,10 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "amount": MessageLookupByLibrary.simpleMessage("Amount"),
         "balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "basicTable": MessageLookupByLibrary.simpleMessage("Basic Table"),
-        "data_table": MessageLookupByLibrary.simpleMessage("DataTable"),
+        "dataTable": MessageLookupByLibrary.simpleMessage("DataTable"),
         "date": MessageLookupByLibrary.simpleMessage("Date"),
         "item": MessageLookupByLibrary.simpleMessage("Item"),
-        "table_title":
+        "tableTitle":
             MessageLookupByLibrary.simpleMessage("Table with a bit of style")
       };
 }

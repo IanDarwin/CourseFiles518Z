@@ -96,7 +96,7 @@ class _TableDemoState extends State<TableDemo> {
           ),
 
           // SECOND TABLE
-          Text(S.of(context).table_title),
+          Text(S.of(context).tableTitle),
           Container(
             padding: const EdgeInsets.all(7),
             child: Table(
@@ -137,7 +137,7 @@ class _TableDemoState extends State<TableDemo> {
           ),
 
           // THIRD TABLE
-          Text(S.of(context).data_table),
+          Text(S.of(context).dataTable),
           Container(
               padding: const EdgeInsets.all(7),
               child: DataTable(

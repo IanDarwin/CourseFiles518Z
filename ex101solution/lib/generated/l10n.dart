@@ -61,10 +61,10 @@ class S {
   }
 
   /// `Table with a bit of style`
-  String get table_title {
+  String get tableTitle {
     return Intl.message(
       'Table with a bit of style',
-      name: 'table_title',
+      name: 'tableTitle',
       desc: '',
       args: [],
     );
@@ -111,10 +111,10 @@ class S {
   }
 
   /// `DataTable`
-  String get data_table {
+  String get dataTable {
     return Intl.message(
       'DataTable',
-      name: 'data_table',
+      name: 'dataTable',
       desc: '',
       args: [],
     );

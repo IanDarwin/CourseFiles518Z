@@ -1,9 +1,9 @@
 {
   "basicTable": "Tabla Basica",
-  "table_title" : "Tabla con un poco de estilo",
+  "tableTitle" : "Tabla con un poco de estilo",
   "date"  : "Fecha",
   "item" : "Artículo",
   "amount" : "Monto",
   "balance" : "Balance",
-  "data_table" : "Tabla de Datos"
+  "dataTable" : "Tabla de Datos"
 }
