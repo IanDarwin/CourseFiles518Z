@@ -1,4 +1,6 @@
 {
+	"@@locale": "en",
+	"@@context": "Table Demo",
 	"basicTable": "Basic Table",
 	"tableTitle" : "Table with a bit of style",
 	"date"  : "Date",

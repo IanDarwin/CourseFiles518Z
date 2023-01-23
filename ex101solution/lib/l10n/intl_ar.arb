@@ -1,4 +1,5 @@
 {
+  "@@locale": "ar",
   "basicTable": "Tabla Basica",
   "tableTitle" : "Tabla con un poco de estilo",
   "date"  : "Fecha",
