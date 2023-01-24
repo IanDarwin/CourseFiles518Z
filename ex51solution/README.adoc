@@ -2,3 +2,7 @@
 
 A simple Flutter just waiting for you to add Camera functionality..
 
+There is HUGELY more capability and complexity to this Camera api.
+See https://pub.dev/packages/camera for the official story,
+and a nearly-full-blown camera app as their "example".
+
