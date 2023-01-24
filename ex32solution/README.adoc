@@ -1,0 +1,25 @@
+= ex32solution
+
+The solution for this is identical to the current source of the bookmarks app,
+which is in its own project in your home directory, so we didn't copy it here.
+Just open the Bookmarks project to see how we added the popup menu.
+
+Spoiler alert! To get an exact look at the changes, use the CLI, after navigating
+into the bookmarks project:
+
+	 git diff ^80a67d ^97812a
+
+== Post-Bonus task
+
+If you did the second bonus, "Add a Drawer", and
+if you have a personal GitHub account, 
+
+	* Make a fork of https://github.com/IanDarwin/bookmarks-flutter;
+	* Apply the "drawer" changes into your forked bookmarks project;
+	* Submit a pull request to add that into the main bookmarks-flutter source.
+
+First or any entry not necessarily accepted - I will decide after the second group
+has had a chance to enter.
+
+P.S. If you are looking at the logs, pay no attention the the "synchronzation" stuff
+as it will be explained in a later chapter.
