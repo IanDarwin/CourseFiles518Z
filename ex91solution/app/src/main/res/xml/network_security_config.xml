@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+	<!-- Using self-signed server cert so provide trust anchor -->
+	<base-config cleartextTrafficPermitted="false">
+		<trust-anchors>
+			<certificates src="@raw/my_ca" />
+			<certificates src="system" />
+		</trust-anchors>
+	</base-config>
+</network-security-config>
+
