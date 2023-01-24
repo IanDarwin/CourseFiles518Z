@@ -1,0 +1,44 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/security_header">
+
+        <SwitchPreferenceCompat
+            app:key="@string/key_pin_required"
+            app:summaryOff="@string/pin_summary_off"
+            app:summaryOn="@string/pin_summary_on"
+            app:title="@string/pin_required_title" />
+
+        <EditTextPreference
+            app:key="@string/key_pin_value"
+            app:dependency="@string/key_pin_required"
+            app:title="@string/pin_title"
+            app:summary="####"
+            android:inputType="numberPassword"/>
+
+        <SwitchPreferenceCompat
+            app:enabled="true"
+            app:key="@string/key_encryption_required"
+            app:title="@string/encryption_required_title" />
+
+        <EditTextPreference
+            app:key="@string/key_encrypt_value"
+            app:dependency="@string/key_encryption_required"
+            app:title="@string/encrypt_key_title"
+            app:summary="********"
+            android:inputType="textPassword"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/backup_header">
+
+        <SwitchPreferenceCompat
+            app:enabled="false"
+            app:key="backup"
+            app:title="@string/backup_periodically"
+            app:summaryOff="@string/backup_summary_off"
+            app:summaryOn="@string/backup_summary_on" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

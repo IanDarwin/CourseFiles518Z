@@ -1,0 +1,10 @@
+= ex91solution
+
+The starting version of this project is based on the Expenses app in 
+Learning Tree's Course 2771, Android Development, but has some "best
+practices" improvements over the version offered in that course. It
+is hope that these improvements will work their way into the relevant
+exercise versions as time permits.
+
+It also has some settings that are not used in 2771, but these
+are probably best ignored.

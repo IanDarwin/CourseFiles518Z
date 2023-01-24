@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Expenses</string>
+    <string name="hello_world">Expenses Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_expense_entry">"Expense Entry "</string>
+    <string name="expEdt_str_date">Date</string>
+    <string name="expEdt_str_description">Description</string>
+    <string name="expEdt_str_amount">Amount</string>
+    <string name="expEdt_str_category">Category</string>
+    <string name="expEdt_str_save">Save</string>
+    <string name="menu_str_settings">Settings</string>
+    <string name="menu_str_add">Add</string>
+    <string name="menu_str_edit">Edit</string>
+    <string name="menu_str_delete">Delete</string>
+    <string name="menu_str_backup">Backup</string>
+    <string name="menu_str_upload">Upload</string>
+    <string name="svc_str_started">Backup service started</string>
+    <string name="pin_required_not_set">PIN Required but not set</string>
+    <string name="toast_str_start_backup">Backing up Expenses</string>
+    <string name="toast_str_exporting_csv">Exporting Expenses as CSV</string>
+    <string name="toast_str_item_deleted">Expense item deleted</string>
+    <string name="str_cam_msg">Click the shutter to take a picture</string>
+    <string name="expEdt_str_camera">Camera</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="security_header">Security</string>
+    <string name="backup_header">Backup</string>
+
+    <!-- prefs keys -->
+    <string name="key_pin_required">pin_required</string>
+    <string name="key_pin_value">pin_value</string>
+    <string name="key_encryption_required">do_encrypt</string>
+    <string name="key_encrypt_value">random_seed</string>
+
+    <!-- Messages Preferences -->
+    <string name="pin_title">Login PIN</string>
+    <string name="reply_title">Default reply action</string>
+    <string name="encrypt_key_title">Encryption Key</string>
+
+    <!-- Backup Preferences -->
+    <string name="backup_title">Backup Expense Items</string>
+    <string name="backup_periodically">Backup periodically?</string>
+    <string name="backup_summary_on">Automatically back up expenses</string>
+    <string name="backup_summary_off">Only back up when manually requested</string>
+
+    <!-- PIN preferences -->
+    <string name="pin_summary_off">PIN not needed to use app (lax!)</string>
+    <string name="pin_summary_on">PIN needed to use the app</string>
+    <string name="pin_required_title">PIN required to use app?</string>
+
+    <!-- PIN login -->
+    <string name="pin_login_required">Enter Login PIN</string>
+    <string name="pin_dialog_OK">OK</string>
+    <string name="pin_dialog_CNX">Cancel</string>
+
+    <!-- Encryption preferences -->
+    <string name="encryption_required_title">Encrypt expenses on device?</string>
+
+    <!-- Misc errors -->
+    <string name="commx_failed">Error communicating with service.
+        Check that the server is running and
+        that the JSON is formatted correctly!
+    </string>
+    <string name="menu_str_help">Help</string>
+</resources>
