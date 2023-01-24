@@ -11,14 +11,14 @@ class FileDao {
 
 	void saveExpense(Expense e) async {
 		String toSave = jsonEncode(e.toJson());
-		print("to save = $toSave");
+		print("To save to $fileName: $toSave");
 		await File(fileName).writeAsString(toSave);
 	}
 
 	Future<Expense> loadExpense() async {
 		String readBack = await File(fileName).readAsString();
 		Map<String,dynamic> map = jsonDecode(readBack);
-		print("Map to load = $map");
+		print("Map loaded: $map");
 		return Expense.fromJson(map);
 	}
 }

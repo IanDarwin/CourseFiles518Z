@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:files_db/expense.dart';
 import 'package:files_db/file_dao.dart';
 import 'package:files_db/sqlite_dao.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,11 +37,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late Expense currentExpense;
+  late Future<Directory> appSupportDir;
+  late FileDao fileDao;
+  final SqliteDao sqliteDao = SqliteDao(fileName: "ex61db");
 
   @override
   void initState() {
-    print("initState");
+    debugPrint("initState");
     currentExpense = _genExpense();
+    appSupportDir = getApplicationSupportDirectory();
+    sqliteDao.open();
     super.initState();
   }
 
@@ -95,34 +103,35 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  final FileDao fileDao = FileDao(fileName: "tempname");
-
-  final SqliteDao sqliteDao = SqliteDao(fileName: "tempname");
-
   Expense _genExpense() {
     return Expense(DateTime.now(), "Breakfast at Tiffany's",
         "Tiffany's Cafe", 123.45);
   }
 
-  _fileSave() {
-    setState(() => fileDao.saveExpense(currentExpense));
+  _fileSave() async {
+    fileDao = FileDao(fileName: "${(await appSupportDir).path}/tempname");
+    fileDao.saveExpense(currentExpense);
+    setState(() {});
   }
   _fileLoad() async {
-    setState(() async => currentExpense = await fileDao.loadExpense());
+    fileDao = FileDao(fileName: "${(await appSupportDir).path}/tempname");
+    currentExpense = await fileDao.loadExpense();
+    setState(() {});
   }
   _dbSave() async {
     sqliteDao.open();
-    setState(() async => currentExpense = await sqliteDao.saveExpense(currentExpense));
+   currentExpense = await sqliteDao.saveExpense(currentExpense);
+    setState(() {});
   }
   _dbLoad() async {
     sqliteDao.open();
-    setState(()async  => currentExpense = await sqliteDao.loadExpense(1));
+    currentExpense = await sqliteDao.loadExpense(1);
+    setState(() {});
   }
   _expReset() {
     setState(() => currentExpense = _genExpense());
   }
   _expClear() {
-    print("_expClear");
     setState(() => currentExpense = Expense(DateTime.now(), "", "", 0.0));
   }
 }
