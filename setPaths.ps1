@@ -20,6 +20,7 @@ $pathsArray =
 	"C:\Users\$env:USERNAME\AppData\Local\Android\Sdk\emulator",
 	"C:\Users\$env:USERNAME\AppData\Local\Android\Sdk\platform-tools",
 	"C:\Users\$env:USERNAME\flutter\bin",
+	"C:\Users\$env:USERNAME\flutter\scripts",
 	"C:\Program Files (x86)\GnuWin32\bin",
 	"C:\Program Files\Git\usr\bin"
 
