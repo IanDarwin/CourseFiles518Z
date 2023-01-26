@@ -5,9 +5,9 @@
 # Update $pathsArray for your needs
 # Author: Ian Darwin based on some pieces found on a web search - no powershell expert am I.
 
-$COURSE_NUM = 518Z
-$JAVA_VER   = 17.0.4.8
-$MAVEN_VER  = 3.8.7
+$COURSE_NUM = "518Z"
+$JAVA_VER   = "17.0.4.8"
+$MAVEN_VER  = "3.8.7"
 
 $Today = (Get-Date).DateTime
 Write-Host "SetPaths run on" $Today
