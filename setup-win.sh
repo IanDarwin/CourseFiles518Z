@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Download this into a different name, e.g.
+# git clone https://github.com/IanDarwin/CourseFiles518Z CourseFiles
+
 # Set up some version numbers
 COURSE_NUM=518Z
 INTELLIJ_VER=2022.3.1
@@ -66,6 +69,9 @@ do
 	fi
 done
 
+# Pick a shorter name
+mv bookmarks-flutter bookmarks
+
 echo Tools used in preparing the course load
 echo "Make (gnu-make)"
 winget install --id GnuWin32.Make
@@ -91,7 +97,7 @@ cp scripts/* $HOME/bin
 
 echo Generating exercise files from solutions
 (
-cd CourseFiles${COURSE_NUM}/sourcecode
+cd CourseFiles/sourcecode
 make
 )
 
