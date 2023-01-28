@@ -13,9 +13,16 @@ class Expense {
   Map<String, dynamic> toJson() => {
     'expenseDate': date.toString().substring(0, 10),
     'description': description,
+    //T Add two missing fields here
+    //-
     'location': location,
     'amount': amount,
+    //+
   };
+
+  String toJsonString() {
+    return toJson().toString();
+  }
 
   /// Here's what it should be called:
   Map<String, dynamic> toMap() => toJson();
@@ -23,10 +30,19 @@ class Expense {
   static Expense fromJson(Map map) => Expense(
     DateTime.fromMillisecondsSinceEpoch(map['expenseDate'] * 1000),
     map['description'],
+    //T Add two fields here
+    //-
     map['location'],
-    map['amount']);
+    map['amount'],
+    //+
+  );
 
   Expense fromMap(map) => Expense.fromJson(map);
+
+  @override
+  String toString() {
+    return "Expense on ${date} for ${description} at ${location} for ${amount}";
+  }
 
   @override
   bool operator ==(Object other) =>

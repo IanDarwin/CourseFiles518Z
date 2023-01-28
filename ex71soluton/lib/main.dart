@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Ex71Solution Home Page'),
     );
   }
 }
@@ -39,34 +39,68 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void refresh() async {
     print("refresh");
+    //T call RestDao.downloadAll() asynchronously, save in expenses
+    //-
     expenses = await RestDao.downloadAll();
+    //+
     setState(()  {
       // nothing needed
     });
   }
+
+  int n = 1;
+
+  void add() async {
+    print("Add");
+    Expense expense = Expense(DateTime.now(), "Item #${++n}", "Someplace", 123.45);
+    RestDao.addExpense(expense);
+    expenses!.add(expense);
+    //T Call setState with a null handler, similar to in refresh()
+    //T (Reminder: setState call is needed to make the widget rebuild)
+    //-
+    setState(() {});
+    //+
+  }
+
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          new IconButton(icon: const Icon(Icons.refresh),
+              onPressed: () async => refresh),
+        ],
       ),
+      //T Note that we're using a ListView builder here instead of
+      // a StreamBuilder, just to make this simpler.
       body: ListView.builder(
         itemCount: expenses!.length,
+        // prototypeItem is an optional efficiency tweak
         prototypeItem: ListTile(
           title: Text("Expenses"),
         ),
         itemBuilder: (context, index) {
+          //T Create a ListTile for each Expense
+          // Have each expense item in the list generate a ListTile
+          // with date in the leading (use toString() and substring
+          // to make it look nice), description for title,
+          // location for subtitle, and amount for trailing
+          //R return Text("Just here to make it compile").
+          //-
           return ListTile(
             leading: Text(expenses![index].date.toString().substring(0, 10)),
             title: Text(expenses![index].description),
             subtitle: Text(expenses![index].location),
             trailing: Text(expenses![index].amount.toString()),
           );
+          //+
         },
       ),
-       floatingActionButton: FloatingActionButton(onPressed: refresh,
-           child: const Text("Update")
-       ),
-     );
+      floatingActionButton: FloatingActionButton(
+        onPressed: add,
+        child: const Icon(Icons.add),
+      ),
+    );
   }
 }
