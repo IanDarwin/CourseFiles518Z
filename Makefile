@@ -2,6 +2,8 @@
 MAKEHANDSONS_DIRS = ex31solution ex51solution ex61solution
 # Dirs to NEVER run makehandsons in
 NEVER_MAKEHANDSONS_DIRS = ex21solution ex22solution ex32solution ex101solution
+# These do not exist!
+NONEXISTANT_DIRS = ex41solution
 
 all:
 	@echo "SourceCode Makefile not created yet. But OK..."
