@@ -95,11 +95,11 @@ cp target/makehandsons-1.0-SNAPSHOT-jar-with-dependencies.jar $HOME/lib/makehand
 cp scripts/* $HOME/bin
 )
 
-echo Generating exercise files from solutions
-(
-cd CourseFiles/sourcecode
-make
-)
+echo NOT Generating exercise files from solutions
+#J(
+#Jcd CourseFiles/sourcecode
+#Jmake
+#J)
 
 git clone https://github.com/IanDarwin/expenses-server
 echo Pre-fetch a bunch ("half the internet") of dependencies for Spring-boot server
