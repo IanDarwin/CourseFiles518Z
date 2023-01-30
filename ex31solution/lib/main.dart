@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         //T Create your UI as the "body:" attribute here (replacing this Text)
-        //R body: Text("Write me!"),
+        //R body: Center(child: Text("Write code to replace me!")),
         //-
         body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
