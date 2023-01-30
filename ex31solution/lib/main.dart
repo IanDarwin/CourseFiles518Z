@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        //T Create your UI as the "body:" attribute here
+        //T Create your UI as the "body:" attribute here (replacing this Text)
         //R body: Text("Write me!"),
         //-
         body: Column(
