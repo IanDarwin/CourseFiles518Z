@@ -1,6 +1,6 @@
 = ex32solution
 
-The solution for this is identical to the current source of the bookmarks app,
+The answer version of this is identical to the current source of the bookmarks app,
 which is in its own project in your home directory, so we didn't copy it here.
 Just open the Bookmarks project to see how we added the popup menu.
 
