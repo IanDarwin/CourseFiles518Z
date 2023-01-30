@@ -36,6 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
+        //T Create your UI as the "body:" attribute here
+        //R body: Text("Write me!"),
+        //-
         body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             ]
         ),
+	//+
         floatingActionButton: FloatingActionButton(
           onPressed: () => debugPrint("Add"),
           tooltip: 'Add',
