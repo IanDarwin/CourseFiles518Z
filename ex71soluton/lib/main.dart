@@ -40,7 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _refresh() async {
 
-    print("refresh");
     //T call RestDao.downloadAll() asynchronously, save result in expenses
     //-
     expenses = await RestDao.downloadAll();
