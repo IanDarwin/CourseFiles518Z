@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'expense.dart';
 import 'package:http/http.dart' as http;
 
@@ -42,10 +41,9 @@ class RestDao {
 		//T Implement this method
 		//-
 		http.Response response = await http.post(urlAddOne,
-			headers: {"Content-Type": "application/json", "Accept":"text/plain"},
-				body: expense.toJson(),
-				encoding: Encoding.getByName("utf-8"),
-
+			headers: {'Content-Type': 'application/json; charset=UTF-8'/*, "Accept":"text/plain"*/ },
+			body: jsonEncode(expense.toJson()),
+			//encoding: Encoding.getByName("utf-8"),
 		);
 		print("Body is ${response.body}");
 		if (response.statusCode == 200) {

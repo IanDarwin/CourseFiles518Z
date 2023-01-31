@@ -11,12 +11,15 @@ class Expense {
   /// a JSON string nor a JsonObject-like thing, as the name implies.
   /// But, this is how things are done in Flutter-land.
   Map<String, dynamic> toJson() => {
-    'expenseDate': date.toString().substring(0, 10),
+    // Date is send is Unix time_t format, for compat. with old server impl
+    // XXX Should change server to accept ISO format yyyy-dd-mm[THH:MM:SS]
+    // 'expenseDate': date.toString().substring(0, 10),
+    'expenseDate': date.millisecondsSinceEpoch/1000,
     'description': description,
     //T Add two missing fields here
     //-
     'location': location,
-    'amount': amount,
+    'amount': amount.toString(),
     //+
   };
 

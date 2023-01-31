@@ -36,21 +36,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Expense>? expenses = [];
+  int n = 1;
 
-  void refresh() async {
+  void _refresh() async {
+
     print("refresh");
-    //T call RestDao.downloadAll() asynchronously, save in expenses
+    //T call RestDao.downloadAll() asynchronously, save result in expenses
     //-
     expenses = await RestDao.downloadAll();
     //+
-    setState(()  {
-      // nothing needed
-    });
+    setState(() => {});
   }
 
-  int n = 1;
-
-  void add() async {
+  void _add() async {
     print("Add");
     Expense expense = Expense(DateTime.now(), "Item #${++n}", "Someplace", 123.45);
     RestDao.addExpense(expense);
@@ -64,20 +62,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print("_MyHomePageState::build()");
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
-          new IconButton(icon: const Icon(Icons.refresh),
-              onPressed: () async => refresh),
-        ],
+          IconButton(icon: const Icon(Icons.refresh),
+              onPressed: () async => _refresh()),
+       ],
       ),
       //T Note that we're using a ListView builder here instead of
       // a StreamBuilder, just to make this simpler.
       body: ListView.builder(
         itemCount: expenses!.length,
         // prototypeItem is an optional efficiency tweak
-        prototypeItem: ListTile(
+        prototypeItem: const ListTile(
           title: Text("Expenses"),
         ),
         itemBuilder: (context, index) {
@@ -98,9 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: add,
+        onPressed: _add,
         child: const Icon(Icons.add),
       ),
     );
   }
 }
+
