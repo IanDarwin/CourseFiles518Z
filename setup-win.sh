@@ -44,30 +44,15 @@ curl -o flutter.zip https://storage.googleapis.com/flutter_infra_release/release
 "C:\Program Files\Git\usr\bin\unzip.exe" flutter.zip > nul:
 rm   flutter.zip
 
-# Sample Code:
-# DartSrc - course author's open-source Dart demo package 
-for git_repo in \
-	https://github.com/IanDarwin/{\
-bookmarks-flutter,\
-dartsrc,\
-darttest,\
-darttestmocks,\
-expenses-server,\
-fluttersrc,\
-flowcase,\
-jmemory,\
-makehandsons\
-} \
-	https://github.com/flutter/samples \
-	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab,RajithAshok/ThePlantApp_v2.3} \
-# This line intentionally left blank. Well, at least commented
-do
+function getagit {
+	git_repo=$1
 	targdir=${git_repo##*/}
 	if [ ! -d ${targdir} ]; then
 		git clone $git_repo
 	else echo $targdir already exists, skipping $git_repo
 	fi
-done
+}
+. getagit.sh
 
 # Pick a shorter name
 mv bookmarks-flutter bookmarks
@@ -101,7 +86,6 @@ echo NOT Generating exercise files from solutions
 #Jmake
 #J)
 
-git clone https://github.com/IanDarwin/expenses-server
 echo Pre-fetch a bunch ("half the internet") of dependencies for Spring-boot server
 sh apache-maven-3.8.6\bin\mvn -ntp -f expenses-server/pom.xml compile
 
