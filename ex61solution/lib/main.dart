@@ -145,10 +145,12 @@ class _MyHomePageState extends State<MyHomePage> {
     //+
   }
 
+  // Reset - get some data onto the page
   _expReset() {
     setState(() => currentExpense = _genExpense());
   }
 
+  /// Clear the fields (mostly). Used to prove that the "load" functions work.
   _expClear() {
     setState(() => currentExpense = Expense(DateTime.now(), "", "", 0.0));
   }
