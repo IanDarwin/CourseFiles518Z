@@ -1,5 +1,5 @@
 # Dirs to run makehandsons in
-MAKEHANDSONS_DIRS = ex31solution ex51solution ex61solution ex71solution
+MAKEHANDSONS_DIRS = ex31solution ex51solution ex61solution ex71solution ex81solution ex91solution
 # Dirs to NEVER run makehandsons in
 NEVER_MAKEHANDSONS_DIRS = ex21solution ex22solution ex32solution ex101solution
 # These do not exist!
