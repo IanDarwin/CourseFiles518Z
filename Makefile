@@ -10,7 +10,7 @@ all:
 
 check:
 	for d in $(MAKEHANDSONS_DIRS); do rg -q '//T' $$d/* || echo "$$d might not have been marked up!"; done
-	for e in ${MAKEHANDSONS_DIRS}; do rg -q "^$${e%solution}\$$" .gitignore || echo ^$${e%solution} not gitignored; done
+	for e in ${MAKEHANDSONS_DIRS}; do rg -q "^$${e%solution}\$$" .gitignore || echo "$${e%solution} not gitignored"; done
 
 # This will FAIL if a directory already exists.
 overwrite:
