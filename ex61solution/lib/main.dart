@@ -108,29 +108,47 @@ class _MyHomePageState extends State<MyHomePage> {
         "Tiffany's Cafe", 123.45);
   }
 
+  /// Save "currentExpense" into a file
   _fileSave() async {
+    //T Implement this method
+    //-
     fileDao = FileDao(fileName: "${(await appSupportDir).path}/tempname");
     fileDao.saveExpense(currentExpense);
     setState(() {});
+    //+
   }
+  /// Load the file into "currentExpense"
   _fileLoad() async {
+    //T Implement this method. Remember to call setState after uwint the DAO
+    //-
     fileDao = FileDao(fileName: "${(await appSupportDir).path}/tempname");
     currentExpense = await fileDao.loadExpense();
     setState(() {});
+    //+
   }
+  /// Save "currentExpense" into the database, using the dao
   _dbSave() async {
+    //T Implement this method
+    //-
     sqliteDao.open();
-   currentExpense = await sqliteDao.saveExpense(currentExpense);
+    currentExpense = await sqliteDao.saveExpense(currentExpense);
     setState(() {});
+    //+
   }
+  /// Query the DB and load the map into "currentExpense" (using the dao!)
   _dbLoad() async {
+    //T Implement this method
+    //-
     sqliteDao.open();
     currentExpense = await sqliteDao.loadExpense(1);
     setState(() {});
+    //+
   }
+
   _expReset() {
     setState(() => currentExpense = _genExpense());
   }
+
   _expClear() {
     setState(() => currentExpense = Expense(DateTime.now(), "", "", 0.0));
   }
