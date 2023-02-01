@@ -1,0 +1,10 @@
+= ex81solution
+
+A Flutter project with state management.
+
+== Getting Started
+
+This project is a starting point for a Flutter list-detail application.
+
+[At present the solution isn't complete, but
+the ex version built from it works]
