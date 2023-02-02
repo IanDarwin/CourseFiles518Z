@@ -13,7 +13,8 @@ expenses-server,\
 fluttersrc,\
 flowcase,\
 jmemory,\
-makehandsons\
+makehandsons,\
+scripts\
 } \
 	https://github.com/flutter/samples \
 	https://github.com:/{gskinnerTeam/flutter-wonderous-app,ErfanRht/MovieLab,RajithAshok/ThePlantApp_v2.3} \
