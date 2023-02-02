@@ -1,0 +1,22 @@
+# This file is traked in CourseFiles but must be linked into ~/.update-all
+# (until upate-all gains an ENV var setting).
+# It's a list of GIT repos that have to be updated when the software is updated
+# And also commands to 'B'uild stuff after updating.
+H bookmarks
+H CourseFiles
+H dartsrc
+H darttest
+H darttestmocks
+H expenses-server
+H flowcase
+H fluttersrc
+H flutter-wonderous-app
+H jmemory
+H makehandsons
+H MovieLab
+H samples
+H scripts
+H ThePlantApp_v2.3
+B makehandsons make install
+B CourseFiles make overwrite
+B . sh -c 'for d in flowcase fluttersrc/* flutter-wonderous-app jmemory MovieLab ThePlantApp; do (cd $d; flutter build apk); done'
