@@ -19,4 +19,4 @@ H scripts
 H ThePlantApp_v2.3
 B makehandsons make install
 B CourseFiles make overwrite
-B . sh -c 'for d in flowcase fluttersrc/* flutter-wonderous-app jmemory MovieLab ThePlantApp; do (cd $d; flutter build apk); done'
+B ~ sh -c 'for d in flowcase fluttersrc/* flutter-wonderous-app jmemory MovieLab ThePlantApp; do (cd $d; flutter build apk); done'
