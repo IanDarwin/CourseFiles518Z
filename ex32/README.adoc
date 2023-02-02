@@ -8,7 +8,7 @@ This Flutter project is part of Ian's Bookmarks scheme.
 == Status
 
 **Note:** At present this is a demo only, and while the UI
-works for some domains of "works", there is NO OFFSITE
+works (for some domains of "works"), there is NO OFFSITE
 STORAGE so please don't spend time typing URLs in here;
 you could lose all your work by uninstall/reinstall
 (or by losing your device, of course).
@@ -33,7 +33,6 @@ for edit, delete (any other?).
 
 A future version will have teh local database backed,
 either with Ian's Java-based backend or with FireBase.
-
 And there'll need to be a settings page for:
 
 * the server info (host, port, path)
