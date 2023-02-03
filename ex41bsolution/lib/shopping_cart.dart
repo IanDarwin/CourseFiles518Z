@@ -11,9 +11,12 @@ class ShoppingCart {
 	void addToCart(Product product) {
 		//T Implement this method
 		//-
-		cart.putIfAbsent(product, () => 0);
-		var n = cart[product] + 1;
-		cart.update(product, (x) => n);
+		// Verbose way:
+		//cart.putIfAbsent(product, () => 0);
+		//var n = cart[product] + 1;
+		// cart.update(product, (x) => n);
+		// Shorter way, if you read the API carefully:
+		cart.update(product, (n) => cart[product]+1, ifAbsent: () => 1);
 		//+
 	}
 
