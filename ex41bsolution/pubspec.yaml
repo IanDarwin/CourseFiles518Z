@@ -1,6 +1,9 @@
 name: ex41bsolution
 description: Exercise 4.1 Track B
 
-dependencies
-  test
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+dependencies:
+  test: ^1.22.2
 

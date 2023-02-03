@@ -1,39 +1,31 @@
 /// A Shopping Cart implemented in dart
 
-class OrderItem {
-	OrderItem(this.name, this.price, this.quantity);
+class Product {
+	Product(this.name, this.price);
 	String name;
 	double price;
-	int quantity;
 }
 
 class ShoppingCart {
 	
-	List<OrderItem> cart = [];
+	final Map<Product,int> cart = {};
 
-	void addToCart(OrderItem newItem) {
-		for (OrderItem item in cart) {
-			if (item == newItem) {
-				item.quantity++;
-				return;
-			}
-		}
-		newItem.quantity = 1;
-		cart.add(newItem);
+	void addToCart(Product product) {
+		cart.putIfAbsent(product, () => 0);
+		var n = cart[product] + 1;
+		cart.update(product, (x) => n);
 	}
 	
-	bool removeFromCart(OrderItem removeItem) {
-		for (OrderItem item in cart) {
-			if (item == removeItem) {
-				cart.remove(removeItem);
-				return true;
-			}
+	bool removeFromCart(Product removeItem) {
+		if (!cart.containsKey(removeItem)) {
+			print("WARNING: removing non-present item");
+			return false;
 		}
-		return false;
+		return cart.remove(removeItem) > 0;
 	}
 	
-	List<OrderItem> getOrderItems() {
-		return (cart);
+	List<Product> getOrderItems() {
+		return cart.keys.toList(growable: false);
 	}
 	
 	double getTotalPrice() {
@@ -41,8 +33,8 @@ class ShoppingCart {
 		//T Iterate over the OrderItems in 'cart'; for each one, add its selling
 		// price (quantity multiplied by sellable.price) into 'total'.
 		//-
-		for (OrderItem item in cart) {
-			total += item.quantity * item.price;
+		for (Product item in cart.keys) {
+			total += cart[item] * item.price;
 		}
 		//+
 		return total;
@@ -54,8 +46,8 @@ class ShoppingCart {
 
 	int getItemCount() {
 		int n = 0;
-		for (OrderItem oi in cart) {
-			n += oi.quantity;
+		for (Product oi in cart.keys) {
+			n += cart[oi];
 		}
 		return n;
 	}
