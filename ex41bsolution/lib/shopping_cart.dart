@@ -16,7 +16,7 @@ class ShoppingCart {
 		//var n = cart[product] + 1;
 		// cart.update(product, (x) => n);
 		// Shorter way, if you read the API carefully:
-		cart.update(product, (n) => cart[product]+1, ifAbsent: () => 1);
+		cart.update(product, (n) => n + 1, ifAbsent: () => 1);
 		//+
 	}
 
