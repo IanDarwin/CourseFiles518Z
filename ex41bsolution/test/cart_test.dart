@@ -1,9 +1,8 @@
+import 'package:ex41bsolution/product.dart';
 import "package:test/test.dart";
 import '../lib/shopping_cart.dart';
 
 ///  Test the logic in the given ShoppingCart
-/// @author Ian Darwin
-
 final Product product = Product("Front Row Centre Tickets", 12.98);
 
 void main() {
@@ -20,13 +19,20 @@ void main() {
     expect(cart.getOrderItems().length, 1);
   });
 
+  //T Add a test that adding then removing a product leaves 0 items
+  //-
   test('RemoveFromCart', () {
     // Check that adding then removing a product leaves 0 items in cart
     cart.addToCart(product);
     cart.removeFromCart(product);
     // expect(cart.orderItems.size(), 0);
   });
+  //+
 
+  //T Add a test that, after adding the same product twice,
+  // getCartSize() returns 1
+  // getItemCount() returns 2
+  //-
   test('GetCartSizeAndItemCount',() {
     // Add the product TWICE to the cart; ensure that now:
     // getCartSize() returns 1
@@ -41,7 +47,11 @@ void main() {
     // Adding an existing object should bump total quantity.
     expect(cart.getItemCount(), 2);
   });
+  //+
 
+  //T Test that adding an item twice results in
+  // getTotalPrice doubling.
+  //-
   test('GetTotalPrice', () {
     expect(cart.getTotalPrice(), 0.0);
     cart.addToCart(product);
@@ -49,5 +59,6 @@ void main() {
     cart.addToCart(product);
     expect(2 * product.price, cart.getTotalPrice());
   });
+  //+
 }
 
