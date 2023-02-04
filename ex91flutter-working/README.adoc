@@ -1,0 +1,10 @@
+= ex91fluttersolution
+
+A Flutter module that is called from legacy Android code.
+
+== More Info
+
+For instructions integrating Flutter modules to your existing applications,
+follow the steps in Exercise 9.1, or you can also consult
+the [add-to-app documentation](https://flutter.dev/docs/development/add-to-app),
+but be aware those are not well maintained!
