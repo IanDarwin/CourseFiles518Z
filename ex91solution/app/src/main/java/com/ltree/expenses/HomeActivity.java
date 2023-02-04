@@ -30,6 +30,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.ListFragment;
 
+import io.flutter.embedding.android.FlutterActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.ltree.expenses.data.Expense;
 
@@ -156,8 +158,11 @@ public class HomeActivity extends AppCompatActivity implements ExpensesListFragm
                 deleteExpenseItem();
                 return true;
             case R.id.menu_help:
-                //T Invoke the Flutter Action here
-                Toast.makeText(this, "Help not implemented, sorry", Toast.LENGTH_LONG).show();
+                //T Invoke the Flutter Action here, using standard Android startActivity()
+                //R Toast.makeText(this, "Help not implemented, sorry", Toast.LENGTH_LONG).show();
+		        //-
+                startActivity(FlutterActivity.createDefaultIntent(this));
+		        //+
                 return true;
             case R.id.menu_export:
                 startExport();
