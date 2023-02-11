@@ -15,3 +15,9 @@ check:
 # This will FAIL if a directory already exists.
 overwrite:
 	makehandsons $(MAKEHANDSONS_DIRS)
+
+DESTROY_GENERATED_DIRS:
+	echo This will destroy all work done in the generated student exercise folders.
+	echo "Are you really really sure? (interrupt with e.g., CTRL/C if not)"
+	read ans
+	for d in $(MAKEHANDSONS_DIRS); do echo rm -r -f $${d%solution}; done
